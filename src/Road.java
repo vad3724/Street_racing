@@ -34,7 +34,7 @@ public class Road extends JPanel implements ActionListener,Runnable  { // Кла
     public Road() { // Конструктор
 
         timer.start(); // Запускаем таймер
-        JOptionPane.showMessageDialog(null,"Нажмите на клавишу 'OK' или 'Enter'  для начала игры");
+        JOptionPane.showMessageDialog(null,"Нажмите на клавишу 'OK' или 'Enter'  для начала игры hs hs sh");
         enemiesFactory.start();
         addKeyListener(new MyKeyAdapter());
         setFocusable(true); // Делаем фрейм в фокусе
