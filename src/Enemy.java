@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
 
@@ -39,7 +38,7 @@ public class Enemy { // Класс врага
             v=getSpeed();
         }
         if (i == 3) {
-            car = new Car_white();
+            car = new CarWhite();
             v=getSpeed();
         }
 

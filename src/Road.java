@@ -20,13 +20,13 @@ public class Road extends JPanel implements ActionListener,Runnable  { // Кла
     Image vzriv = new ImageIcon("res\\взрыв.png").getImage(); // Объект который хранит изображение взрыва
 
     Random rand =  new Random();
-    int i = rand.nextInt(2)+1;
+    int i = rand.nextInt(2);
     BackgroundRoad backgroundRoad;
 
 
     public Image getroadImage() {
-       if (i==1) backgroundRoad=new RoadStreet();
-        else backgroundRoad=new RoadKub();
+       if (i==0) backgroundRoad=new RoadKub();
+        else backgroundRoad=new RoadStreet();
         return backgroundRoad.roadImage;
     }
     Image img = getroadImage();
