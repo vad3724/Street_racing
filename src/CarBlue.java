@@ -4,8 +4,8 @@ import java.awt.*;
 /**
  * Created by Пользователь on 29.11.2016.
  */
-public class Car_blue extends Car{
-    public Car_blue() {
+public class CarBlue extends Car{
+    public CarBlue() {
         carImage = new ImageIcon("res\\Enemy.png").getImage();//Изображение машины
         carSpeed= 10;
     }

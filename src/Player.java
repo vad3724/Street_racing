@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -8,7 +7,7 @@ import java.awt.event.KeyListener;
  */
 public class Player implements KeyListener {  // Класс игрока
 
-    PCar pCar=new PCar_norm();
+    PCar pCar=new PCarNorm();
 
     public Image getPlayerImage() {
         return pCar.PlayerImage;
@@ -69,13 +68,13 @@ public class Player implements KeyListener {  // Класс игрока
         }
 
         if (key==KeyEvent.VK_DOWN){ // Если нажата кнопка вниз
-            pCar = new PCar_right();
+            pCar = new PCarRight();
             img=getPlayerImage(); // Изображение машины влево
             dy=5; // Опускаем машинку
         }
         if(key==KeyEvent.VK_UP){ // Если нажата кнопка вверх
             dy=-5; // Поднимаем машинку
-            pCar = new PCar_left();
+            pCar = new PCarLeft();
             img=getPlayerImage(); //Изображение машины влево
         }
     }
@@ -90,7 +89,7 @@ public class Player implements KeyListener {  // Класс игрока
 
         if (key==KeyEvent.VK_DOWN || key==KeyEvent.VK_UP){ // Если отпустли клавишу вверх или вниз
             dy=0; // Не изменяем координаты машинки по оси e
-            pCar=new PCar_norm();
+            pCar=new PCarNorm();
             img=getPlayerImage(); // Изображение машины вперёд
         }
     }

@@ -30,11 +30,11 @@ public class Enemy { // Класс врага
         Random rand = new Random();
         int i = rand.nextInt(3) + 1;
         if (i == 1) {
-            car = new Car_blue();
+            car = new CarBlue();
             v=getSpeed();
         }
         if (i == 2) {
-            car = new Car_red();
+            car = new CarRed();
             v=getSpeed();
         }
         if (i == 3) {
