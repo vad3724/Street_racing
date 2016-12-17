@@ -10,6 +10,7 @@ public class Player implements KeyListener {  // Класс игрока
     PCar pCar=new PCarNorm();
 
     public Image getPlayerImage() {
+
         return pCar.PlayerImage;
     }
 

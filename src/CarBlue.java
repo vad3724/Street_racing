@@ -10,6 +10,4 @@ public class CarBlue extends Car{
         carSpeed= 10;
     }
 
-
-
 }
