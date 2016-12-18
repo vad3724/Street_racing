@@ -7,32 +7,19 @@ import java.awt.event.KeyListener;
  */
 public class Player implements KeyListener {  // Класс игрока
 
-    PCar pCar=new PCarNorm();
-
-    public Image getPlayerImage() {
-
-        return pCar.PlayerImage;
-    }
-
-
-    Image img =getPlayerImage(); // Текущее изображение машины
-
-    public Rectangle getRect() { // Конструктор
-        return new Rectangle(x,y,200,100);// Возвращаем прямоугольник размером с игрока
-    }
-
     public static final int MAX_V= 70; // Максимальная скорость машинки
+
     public static final int MAX_TOP=-55; // Максимальная высота на которую может подняться машинка
     public static final int MAX_BOTTOM=420; // Максимальная высота на которою может опуститься машинка
     int vp=10; // Начальная скорость
     int dv =0; // Ускорение
     int s=0; // Пройденый путь
     int dy=0;
-
     int x=5; //  Координата машины по оси х
     int y=100;  // Координаты машины по оси у
     int layer1=0; // Координата первого слоя
     int layer2=1200; // координаты второго слоя
+
 
     public void move(){ // Метод который справляет машиной
         s+=vp; // Увеличиваем пройденый путь
@@ -50,6 +37,20 @@ public class Player implements KeyListener {  // Класс игрока
             layer1 -= vp;
             layer2 -= vp;
         }
+    }
+
+    public Image getPlayerImage() {
+
+        return pCar.PlayerImage;
+    }
+
+    PCar pCar=new PCarNorm();
+
+
+    Image img =getPlayerImage(); // Текущее изображение машины
+
+    public Rectangle getRect() { // Конструктор
+        return new Rectangle(x,y,200,100);// Возвращаем прямоугольник размером с игрока
     }
 
 

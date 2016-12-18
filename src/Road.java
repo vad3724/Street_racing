@@ -68,32 +68,32 @@ public class Road extends JPanel implements ActionListener,Runnable  { // Кла
         public void keyReleased(KeyEvent e){  // Отпустили клавишу
             p.keyReleased(e);
         }
-    }
+        public void paint(Graphics g){// прорисовка
+            g= (Graphics2D) g; // Приведение типов для зарисовки
+            g.drawImage(img, p.layer1,0,null); // Зарисовываем фрейм первым изображением
+            g.drawImage(img, p.layer2,0,null); // Зарисовываем фрейм вторым изображением
+            g.drawImage(p.img,p.x,p.y,null); // Зарисовываем машину на дороге
+
+            Iterator<Enemy> i = enemies.iterator(); // Объект для работы с коллекцией
+            Random r1= new Random(); // Оъект рандом
+            while (i.hasNext()){ // Пока не последний элемент
+                Enemy e = i.next(); // Используем его
 
 
-    public void paint(Graphics g){
-        g= (Graphics2D) g; // Приведение типов для зарисовки
-        g.drawImage(img, p.layer1,0,null); // Зарисовываем фрейм первым изображением
-        g.drawImage(img, p.layer2,0,null); // Зарисовываем фрейм вторым изображением
-        g.drawImage(p.img,p.x,p.y,null); // Зарисовываем машину на дороге
-
-        Iterator<Enemy> i = enemies.iterator(); // Объект для работы с коллекцией
-        Random r1= new Random(); // Оъект рандом
-        while (i.hasNext()){ // Пока не последний элемент
-            Enemy e = i.next(); // Используем его
+                if (e.x>=2400||e.x<=-2400){ //Если враг ушёл за границу экрана
+                    i.remove(); // Удаляем его
+                }else { // Если нет
+                    e.move(); // Вызываем метод движения врага
+                    g.drawImage(e.getCarImage(), e.x, e.y, null); // Рисуем его
 
 
-            if (e.x>=2400||e.x<=-2400){ //Если враг ушёл за границу экрана
-               i.remove(); // Удаляем его
-           }else { // Если нет
-                e.move(); // Вызываем метод движения врага
-                g.drawImage(e.getCarImage(), e.x, e.y, null); // Рисуем его
-
-
+                }
             }
+
         }
 
-    } // прорисовка
+
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) { // Обработчик событий таймера
